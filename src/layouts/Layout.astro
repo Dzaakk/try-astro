@@ -1,4 +1,5 @@
 ---
+import Header from "../components/Header.astro";
 interface Props {
 	title: string;
 	description?: string;
@@ -8,7 +9,7 @@ interface Props {
 const {
 	title,
 	description = "A Community of musi producers and enthusiasts",
-	image = "/images/band.jpg",
+	image = "images/band.jpg",
 } = Astro.props;
 ---
 
@@ -20,9 +21,11 @@ const {
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<meta property="" og:image" content={image} <title />{title}</head
-	>
-	<body>
+		<meta property="og:image" content={image} />
+		<title>{title}</title>
+	</head>
+	<body class="min-h-screen">
+		<Header />
 		<slot />
 	</body>
 </html>
